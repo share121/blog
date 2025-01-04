@@ -99,6 +99,13 @@ const vitepressOptions: UserConfig = {
       GitChangelog({
         // 填写在此处填写您的仓库链接
         repoURL: () => "https://github.com/share121/blog",
+        mapAuthors: [
+          {
+            name: "share121",
+            username: "share121",
+            mapByEmailAliases: ["2854631158@qq.com"],
+          },
+        ],
       }),
       GitChangelogMarkdownSection(),
       // AnnouncementPlugin({
