@@ -21,7 +21,7 @@ import { VPTeamMembers } from "vitepress/theme";
 
 const members = [
   {
-    avatar: "https://www.github.com/share121.png",
+    avatar: "https://gitlab.com/uploads/-/system/user/avatar/18043480/avatar.png",
     name: "share121",
     title: "前端开发",
     org: "三清课堂",
