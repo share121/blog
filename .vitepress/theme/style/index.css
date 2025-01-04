@@ -1,0 +1,15 @@
+@import "./blockquote.css";
+@import "./custom-block.css";
+@import "./font.css";
+@import "./hero.css";
+@import "./mark.css";
+@import "./medium-zoom.css";
+@import "./scroll.css";
+@import "./sidebar.css";
+@import "./nav.css";
+
+* {
+  overflow-wrap: break-word;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}

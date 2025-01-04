@@ -3,6 +3,11 @@ import { inBrowser, useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { watch } from "vue";
 import Giscus from "@giscus/vue";
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
+} from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
 
 const { isDark, page } = useData();
 const { Layout } = DefaultTheme;
@@ -21,6 +26,15 @@ watch(isDark, (dark) => {
 
 <template>
   <Layout>
+    <template #layout-top>
+      <NolebaseHighlightTargetedHeading />
+    </template>
+    <template #nav-bar-content-after>
+      <NolebaseEnhancedReadabilitiesMenu />
+    </template>
+    <template #nav-screen-content-after>
+      <NolebaseEnhancedReadabilitiesScreenMenu />
+    </template>
     <template #doc-after>
       <div style="margin-top: 24px">
         <Giscus

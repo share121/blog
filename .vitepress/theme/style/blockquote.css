@@ -1,0 +1,6 @@
+.vp-doc blockquote {
+  border-radius: 5px;
+  padding: 10px 16px;
+  position: relative;
+  border-left: 4px solid var(--vp-c-divider);
+}
