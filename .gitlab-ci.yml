@@ -1,4 +1,4 @@
-image: node:18
+image: node:lts
 before_script:
   - corepack enable
   - corepack prepare pnpm@latest-9 --activate
