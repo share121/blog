@@ -71,6 +71,22 @@ const vitepressOptions: UserConfig = {
       .join("/");
   },
   vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              return id
+                .toString()
+                .split("node_modules/")
+                .at(-1)!
+                .split("/")[0]
+                .toString();
+            }
+          },
+        },
+      },
+    },
     css: {
       postcss: {
         plugins: [postcssPresetEnv()],
