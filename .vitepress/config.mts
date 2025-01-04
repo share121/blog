@@ -144,7 +144,34 @@ const vitepressOptions: UserConfig = {
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "文档", link: "/introduction/" },
+      {
+        text: "学习",
+        items: [
+          { text: "语文", link: "/chinese" },
+          { text: "数学", link: "/math" },
+          { text: "英语", link: "/english" },
+          { text: "物理", link: "/physics" },
+          { text: "化学", link: "/chemistry" },
+          { text: "政治", link: "/politics" },
+          { text: "历史", link: "/history" },
+        ],
+      },
+      {
+        text: "编程",
+        items: [
+          { text: "HTML", link: "/codeing/html" },
+          { text: "JavaScript", link: "/codeing/javascript" },
+          { text: "破解", link: "/codeing/crack" },
+          { text: "Python", link: "/codeing/python" },
+          { text: "Dart", link: "/codeing/dart" },
+          { text: "Nuxt.js", link: "/codeing/nuxtjs" },
+          { text: "Solid.js", link: "/codeing/solidjs" },
+          { text: "C++", link: "/codeing/cpp" },
+          { text: "uTools", link: "/codeing/utools" },
+          { text: "Dart 教程", link: "/codeing/dart-tutorials" },
+        ],
+      },
+      { text: "科技", link: "/technology" },
     ],
     sidebar: genSidebar(),
     footer: {
