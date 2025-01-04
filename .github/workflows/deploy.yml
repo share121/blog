@@ -24,6 +24,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  sync:
+    name: Sync to GitLab
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Sync to GitLab
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.RSA_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:share121/blog.git
+          destination-repo: git@gitlab.com:share121/blog.git
+
   # 构建工作
   build:
     runs-on: ubuntu-latest

@@ -1,0 +1,20 @@
+image: node:18
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@latest-9 --activate
+  - pnpm config set store-dir .pnpm-store
+pages:
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+  script:
+    - npm install
+    - pnpm build
+  artifacts:
+    paths:
+      - .vitepress/dist
+  only:
+    - main
