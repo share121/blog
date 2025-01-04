@@ -82,22 +82,6 @@ const vitepressOptions: UserConfig = {
         "@nolebase/vitepress-plugin-highlight-targeted-heading",
       ],
     },
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (id.includes("node_modules")) {
-              return id
-                .toString()
-                .split("node_modules/")
-                .at(-1)!
-                .split("/")[0]
-                .toString();
-            }
-          },
-        },
-      },
-    },
     css: {
       postcss: {
         plugins: [postcssPresetEnv()],
