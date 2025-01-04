@@ -10,6 +10,8 @@ import "vitepress-plugin-nprogress/lib/css/index.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
 import { Sandbox } from "vitepress-plugin-sandpack";
 import "vitepress-plugin-sandpack/dist/style.css";
+import "@shikijs/vitepress-twoslash/style.css";
+import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 
 export default {
   extends: DefaultTheme,
@@ -45,6 +47,7 @@ export default {
   enhanceApp(ctx) {
     ctx.app.component("ThemedImage", ThemedImage);
     ctx.app.component("Sandbox", Sandbox);
+    ctx.app.use(TwoslashFloatingVue);
     vitepressNprogress(ctx);
   },
 };

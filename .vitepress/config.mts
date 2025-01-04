@@ -19,9 +19,12 @@ import { AnnouncementPlugin } from "vitepress-plugin-announcement";
 import container from "markdown-it-container";
 import { renderSandbox } from "vitepress-plugin-sandpack";
 import postcssPresetEnv from "postcss-preset-env";
+import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 
 const vitepressOptions: UserConfig = {
   markdown: {
+    // @ts-ignore
+    codeTransformers: [transformerTwoslash()],
     image: {
       lazyLoading: true,
     },
@@ -185,7 +188,7 @@ const vitepressOptions: UserConfig = {
     socialLinks: [
       { icon: "bilibili", link: "https://space.bilibili.com/626843261" },
       { icon: "gitee", link: "https://gitee.com/share121" },
-      { icon: "gitlab", link: "https://gitlab.com/share121" },
+      { icon: "gitlab", link: "https://gitlab.com/share121/blog" },
       { icon: "github", link: "https://github.com/share121/blog" },
     ],
   },
