@@ -95,8 +95,9 @@ const vitepressOptions: UserConfig = {
     plugins: [
       RssPlugin(rssOptions),
       La51Plugin({
-        id: "3KhSqiNoRBw5iG2W",
-        ck: "3KhSqiNoRBw5iG2W",
+        id: "3Kpm8ZvpPuRpN0Xu",
+        ck: "3Kpm8ZvpPuRpN0Xu",
+        screenRecord: true,
         autoTrack: true,
         importMode: "async",
       }),
