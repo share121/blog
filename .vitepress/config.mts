@@ -154,7 +154,12 @@ const vitepressOptions: UserConfig = {
     editLink: {
       pattern: "https://github.com/share121/blog/edit/main/docs/:path",
     },
-    socialLinks: [{ icon: "github", link: "https://github.com/share121/blog" }],
+    socialLinks: [
+      { icon: "bilibili", link: "https://space.bilibili.com/626843261" },
+      { icon: "gitee", link: "https://gitee.com/share121" },
+      { icon: "gitlab", link: "https://gitlab.com/share121" },
+      { icon: "github", link: "https://github.com/share121/blog" },
+    ],
   },
 };
 

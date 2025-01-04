@@ -17,18 +17,23 @@ features:
 ---
 
 <script setup>
-import { VPTeamMembers } from 'vitepress/theme';
+import { VPTeamMembers } from "vitepress/theme";
 
 const members = [
   {
-    avatar: 'https://www.github.com/share121.png',
-    name: 'share121',
+    avatar: "https://www.github.com/share121.png",
+    name: "share121",
+    title: "前端开发",
+    org: "三清课堂",
+    orgLink: "https://github.com/trpure-class",
     links: [
-      { icon: 'github', link: 'https://github.com/share121' },
-      { icon: 'bilibili', link: 'https://space.bilibili.com/626843261' },
+      { icon: "bilibili", link: "https://space.bilibili.com/626843261" },
+      { icon: "gitee", link: "https://gitee.com/share121" },
+      { icon: "gitlab", link: "https://gitlab.com/share121" },
+      { icon: "github", link: "https://github.com/share121/blog" },
     ]
   },
 ]
 </script>
 
-<VPTeamMembers size="small" :members="members" />
+<VPTeamMembers :members="members" />
