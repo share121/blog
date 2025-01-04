@@ -11,7 +11,7 @@ pages:
     paths:
       - .pnpm-store
   script:
-    - npm install
+    - pnpm install
     - pnpm build
   artifacts:
     paths:
