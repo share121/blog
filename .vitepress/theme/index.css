@@ -1,3 +1,6 @@
+@import "./var.css";
+@import "./blur.css";
+
 .group:has([role="button"]) .VPSidebarItem.level-0 .items {
   padding-left: 16px !important;
   border-left: 1px solid var(--vp-c-divider);
@@ -40,4 +43,26 @@ mark.highlight {
   to {
     background-size: 100% 38%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.5);
+  background-clip: padding-box;
+  min-height: 28px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144, 147, 153, 0.3);
 }

@@ -14,6 +14,11 @@ import deflist from "markdown-it-deflist";
 import abbr from "markdown-it-abbr";
 import ins from "markdown-it-ins";
 import mark from "markdown-it-mark";
+import timeline from "vitepress-markdown-timeline";
+import { AnnouncementPlugin } from "vitepress-plugin-announcement";
+import container from "markdown-it-container";
+import { renderSandbox } from "vitepress-plugin-sandpack";
+import postcssPresetEnv from "postcss-preset-env";
 
 const vitepressOptions: UserConfig = {
   markdown: {
@@ -23,13 +28,19 @@ const vitepressOptions: UserConfig = {
     lineNumbers: true,
     math: true,
     config: (md) => {
-      md.use(footnote)
+      md.use(container, "sandbox", {
+        render(tokens, idx) {
+          return renderSandbox(tokens, idx, "sandbox");
+        },
+      })
+        .use(footnote)
         .use(mark)
         .use(sub)
         .use(sup)
         .use(ins)
         .use(abbr)
-        .use(deflist);
+        .use(deflist)
+        .use(timeline);
     },
     container: {
       tipLabel: "提示",
@@ -60,6 +71,11 @@ const vitepressOptions: UserConfig = {
       .join("/");
   },
   vite: {
+    css: {
+      postcss: {
+        plugins: [postcssPresetEnv()],
+      },
+    },
     plugins: [
       RssPlugin(rssOptions),
       La51Plugin({
@@ -68,15 +84,50 @@ const vitepressOptions: UserConfig = {
         autoTrack: true,
         importMode: "async",
       }),
+      // AnnouncementPlugin({
+      //   title: "公告",
+      //   duration: -1,
+      //   body: [
+      //     { type: "text", content: "👇公众号👇 ---👇 赞赏 👇" },
+      //     {
+      //       type: "image",
+      //       src: "https://cdn.upyun.sugarat.top/mdImg/sugar/85c9554d023be2fcc5aab94effeef033",
+      //       style: "display: inline-block;width:46%;padding-right:6px",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "https://cdn.upyun.sugarat.top/mdImg/sugar/54eacf3e730af9c1e3542a4800a422ea",
+      //       style: "display: inline-block;width:46%;padding-left:6px",
+      //     },
+      //   ],
+      //   footer: [
+      //     {
+      //       type: "text",
+      //       content: "footer content",
+      //     },
+      //     {
+      //       type: "button",
+      //       content: "作者博客",
+      //       link: "https://sugarat.top",
+      //     },
+      //     {
+      //       type: "button",
+      //       content: "博客主题",
+      //       link: "https://theme.sugarat.top",
+      //       props: {
+      //         type: "success",
+      //       },
+      //     },
+      //   ],
+      // }),
     ],
   },
   srcDir: "docs",
   lastUpdated: true,
   themeConfig: {
-    searchProvider: "local",
     nav: [
       { text: "首页", link: "/" },
-      { text: "指南", link: "/guide/" },
+      { text: "文档", link: "/introduction/" },
     ],
     sidebar: genSidebar(),
     footer: {

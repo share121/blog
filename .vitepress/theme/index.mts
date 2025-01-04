@@ -3,8 +3,13 @@ import MyLayout from "./Layout.vue";
 import mediumZoom from "medium-zoom";
 import { useRoute } from "vitepress";
 import { nextTick, onMounted, watch } from "vue";
-import "./custom.css";
+import "./index.css";
 import ThemedImage from "../components/ThemedImage.vue";
+import vitepressNprogress from "vitepress-plugin-nprogress";
+import "vitepress-plugin-nprogress/lib/css/index.css";
+import "vitepress-markdown-timeline/dist/theme/index.css";
+import { Sandbox } from "vitepress-plugin-sandpack";
+import "vitepress-plugin-sandpack/dist/style.css";
 
 export default {
   extends: DefaultTheme,
@@ -37,7 +42,9 @@ export default {
       () => nextTick(initRoom)
     );
   },
-  enhanceApp({ app }) {
-    app.component("ThemedImage", ThemedImage);
+  enhanceApp(ctx) {
+    ctx.app.component("ThemedImage", ThemedImage);
+    ctx.app.component("Sandbox", Sandbox);
+    vitepressNprogress(ctx);
   },
 };
