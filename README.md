@@ -1,6 +1,7 @@
 # share121 的博客
 
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/share121/blog/main?label=%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4)
 
 - **记录生活**  
   记录生活中的点滴，分享自己的感悟和经历
