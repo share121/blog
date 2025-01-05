@@ -66,6 +66,7 @@ const vitepressOptions: UserConfig = {
   description: "share121 的博客",
   cleanUrls: true,
   rewrites: rewrites2,
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
   vite: {
     optimizeDeps: {
       exclude: [
@@ -149,6 +150,7 @@ const vitepressOptions: UserConfig = {
   srcDir: "docs",
   lastUpdated: true,
   themeConfig: {
+    logo: "/logo.png",
     nav: [
       { text: "首页", link: "/" },
       {

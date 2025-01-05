@@ -7,6 +7,9 @@ hero:
     - theme: brand
       text: 介绍
       link: /introduction
+  image:
+    src: /派蒙.png
+    alt: 派蒙
 features:
   - title: 记录生活
     details: 记录生活中的点滴，分享自己的感悟和经历
@@ -21,7 +24,7 @@ import { VPTeamMembers } from "vitepress/theme";
 
 const members = [
   {
-    avatar: "https://gitlab.com/uploads/-/system/user/avatar/18043480/avatar.png",
+    avatar: "/logo.png",
     name: "share121",
     title: "前端开发",
     org: "三清课堂",
