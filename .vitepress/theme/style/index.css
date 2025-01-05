@@ -7,6 +7,7 @@
 @import "./scroll.css";
 @import "./sidebar.css";
 @import "./nav.css";
+@import "./h1.css";
 
 * {
   overflow-wrap: break-word;

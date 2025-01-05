@@ -39,7 +39,7 @@ export default {
           }
         });
       });
-      document.querySelectorAll("mark").forEach((mark) => {
+      document.querySelectorAll(".vp-doc mark, .vp-doc h1").forEach((mark) => {
         observer.observe(mark);
       });
     };

@@ -1,0 +1,22 @@
+.vp-doc h1 {
+  display: inline-block;
+  background-image: linear-gradient(#73ffa0, #73ffa0);
+  background-repeat: no-repeat;
+  background-size: 0% 38%;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+html.dark .vp-doc h1 {
+  background-image: linear-gradient(#2d643f, #2d643f);
+}
+
+.vp-doc h1.highlight {
+  animation: 2s highlight ease-in-out 0.3s forwards;
+}
+
+@keyframes highlight {
+  to {
+    background-size: 100% 38%;
+  }
+}
