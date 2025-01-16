@@ -6,7 +6,7 @@ hero:
   actions:
     - theme: brand
       text: 介绍
-      link: /introduction
+      link: /01-introduction
   image:
     src: /派蒙.png
     alt: 派蒙

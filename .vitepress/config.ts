@@ -5,7 +5,8 @@ import { La51Plugin } from "vitepress-plugin-51la";
 import { withMermaid } from "vitepress-plugin-mermaid";
 import rssOptions from "./rss.ts";
 import { i18nOptions } from "./i18n.ts";
-import { genSidebar, rewrites2 } from "./sidebar.ts";
+import { vitePressSidebarOptions } from "./sidebar.ts";
+import { generateSidebar } from "vitepress-sidebar";
 import footnote from "markdown-it-footnote";
 // @ts-ignore
 import sub from "markdown-it-sub";
@@ -65,7 +66,6 @@ const vitepressOptions: UserConfig = {
   title: "share121 的博客",
   description: "share121 的博客",
   cleanUrls: true,
-  rewrites: rewrites2,
   head: [["link", { rel: "icon", href: "/logo.png" }]],
   vite: {
     optimizeDeps: {
@@ -156,34 +156,34 @@ const vitepressOptions: UserConfig = {
       {
         text: "学习",
         items: [
-          { text: "语文", link: "/chinese/" },
-          { text: "数学", link: "/math/" },
-          { text: "英语", link: "/english/" },
-          { text: "物理", link: "/physics/" },
-          { text: "化学", link: "/chemistry/" },
-          { text: "政治", link: "/politics/" },
-          { text: "历史", link: "/history/" },
+          { text: "语文", link: "/02-chinese/" },
+          { text: "数学", link: "/03-math/" },
+          { text: "英语", link: "/04-english/" },
+          { text: "政治", link: "/05-politics/" },
+          { text: "历史", link: "/06-history/" },
+          { text: "物理", link: "/07-physics/" },
+          { text: "化学", link: "/08-chemistry/" },
         ],
       },
       {
         text: "编程",
         items: [
-          { text: "HTML", link: "/codeing/html/" },
-          { text: "JavaScript", link: "/codeing/javascript/" },
-          { text: "破解", link: "/codeing/crack/" },
-          { text: "Python", link: "/codeing/python/" },
-          { text: "Dart", link: "/codeing/dart/" },
-          { text: "Nuxt.js", link: "/codeing/nuxtjs/" },
-          { text: "Solid.js", link: "/codeing/solidjs/" },
-          { text: "C++", link: "/codeing/cpp/" },
-          { text: "uTools", link: "/codeing/utools/" },
-          { text: "Dart 教程", link: "/codeing/dart-tutorials/" },
-          { text: "Go", link: "/codeing/go/" },
+          { text: "HTML", link: "/09-coding/01-html/" },
+          { text: "JavaScript", link: "/09-coding/03-javascript/" },
+          { text: "破解", link: "/09-coding/04-crack/" },
+          { text: "Python", link: "/09-coding/06-python/" },
+          { text: "Dart", link: "/09-coding/07-dart/" },
+          { text: "Nuxt.js", link: "/09-coding/08-nuxtjs/" },
+          { text: "Solid.js", link: "/09-coding/09-solidjs/" },
+          { text: "C++", link: "/09-coding/10-cpp/" },
+          { text: "uTools", link: "/09-coding/11-utools/" },
+          { text: "Dart 教程", link: "/09-coding/13-dart-tutorials/" },
+          { text: "Go", link: "/09-coding/14-go/" },
         ],
       },
-      { text: "科技", link: "/technology/" },
+      { text: "科技", link: "/10-technology/" },
     ],
-    sidebar: genSidebar(),
+    sidebar: generateSidebar(vitePressSidebarOptions),
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2025-present share121",
