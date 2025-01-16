@@ -267,6 +267,6 @@ features 描述了当 uTools 主输入框内容产生变化时，此插件应用
 
 完整配置文件[下载][3]
 
-[1]: ./template
-[2]: ./api#setexpendheightheight
+[1]: 04-template
+[2]: 05-api#setexpendheightheight
 [3]: https://u.tools/docs/plugin.json
