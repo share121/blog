@@ -30,6 +30,8 @@ import {
   GitChangelog,
   GitChangelogMarkdownSection,
 } from "@nolebase/vitepress-plugin-git-changelog/vite";
+import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
+import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 
 const vitepressOptions: UserConfig = {
   markdown: {
@@ -49,6 +51,12 @@ const vitepressOptions: UserConfig = {
         .use(abbr)
         .use(deflist)
         .use(timeline)
+        .use(
+          BiDirectionalLinks({
+            dir: "docs",
+          })
+        )
+        .use(InlineLinkPreviewElementTransform)
         .use(container, "sandbox", {
           render(tokens: any[], idx: number) {
             return renderSandbox(tokens, idx, "sandbox");
@@ -71,6 +79,7 @@ const vitepressOptions: UserConfig = {
     optimizeDeps: {
       exclude: [
         "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-inline-link-preview/client",
         "vitepress",
         "@nolebase/ui",
       ],
@@ -81,6 +90,7 @@ const vitepressOptions: UserConfig = {
         "@nolebase/vitepress-plugin-enhanced-readabilities",
         "@nolebase/ui",
         "@nolebase/vitepress-plugin-highlight-targeted-heading",
+        "@nolebase/vitepress-plugin-inline-link-preview",
       ],
     },
     css: {
