@@ -29,7 +29,7 @@ Go 语言是 2006 年 1 月 2 号 15 点 04 分 05 秒出生的
 ## 时间戳
 
 ```go
-// 获取毫秒时间戳
+// 获取秒时间戳
 msTimeStamp := timeObj.Unix()
 fmt.Println(msTimeStamp)
 
