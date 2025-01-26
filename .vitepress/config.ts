@@ -1,4 +1,4 @@
-import { defineConfig, UserConfig } from "vitepress";
+import { DefaultTheme, defineConfig, UserConfig } from "vitepress";
 import { withI18n } from "vitepress-i18n";
 import { RssPlugin } from "vitepress-plugin-rss";
 import { La51Plugin } from "vitepress-plugin-51la";
@@ -33,7 +33,7 @@ import {
 import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
 import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 
-const vitepressOptions: UserConfig = {
+const vitepressOptions: UserConfig<DefaultTheme.Config> = {
   markdown: {
     // @ts-ignore
     codeTransformers: [transformerTwoslash()],
@@ -198,6 +198,7 @@ const vitepressOptions: UserConfig = {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2025-present share121",
     },
+    outline: "deep",
     externalLinkIcon: true,
     editLink: {
       pattern: "https://github.com/share121/blog/edit/main/docs/:path",
